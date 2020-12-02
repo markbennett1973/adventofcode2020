@@ -1,18 +1,13 @@
 <?php
 
+include('common.php');
+
 const INPUT_FILE = 'day1-input.txt';
 const TARGET = 2020;
 
-$data = getInput();
+$data = getInput(INPUT_FILE);
 print 'Part 1: ' . (part1($data) ?? 'No answer') . "\n";
 print 'Part 2: ' . (part2($data) ?? 'No answer') . "\n";
-
-function getInput(): array
-{
-    return array_filter(explode("\n", file_get_contents(INPUT_FILE)), function ($a) {
-        return is_numeric($a);
-    });
-}
 
 function part1($data): ?int
 {
