@@ -1,8 +1,14 @@
 <?php
 
-function getInput(string $filepath): array
+function getInput(string $filepath, bool $removeEmpty = true): array
 {
-    return array_filter(explode("\n", file_get_contents($filepath)), function ($a) {
-        return trim($a) !== '';
-    });
+    $data = explode("\n", file_get_contents($filepath));
+
+    if ($removeEmpty) {
+        $data = array_filter($data, function ($a) {
+            return trim($a) !== '';
+        });
+    }
+
+    return $data;
 }
