@@ -3,6 +3,7 @@
 include('common.php');
 
 const INPUT_FILE = 'test.txt';
+// const INPUT_FILE = 'day5-input.txt';
 
 $data = getInput(INPUT_FILE);
 print 'Part 1: ' . (part1($data) ?? 'No answer') . "\n";
